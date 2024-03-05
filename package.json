@@ -1,0 +1,16 @@
+{
+  "name": "backend_mongo",
+  "version": "1.0.0",
+  "description": "just for learning application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "mongoDB",
+    "javascript"
+  ],
+  "author": "rahul Gupta",
+  "license": "ISC"
+}
