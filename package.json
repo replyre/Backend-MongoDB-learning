@@ -2,6 +2,7 @@
   "name": "backend_mongo",
   "version": "1.0.0",
   "description": "just for learning application",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +13,8 @@
     "javascript"
   ],
   "author": "rahul Gupta",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
