@@ -3,7 +3,7 @@ import connectDb from "./db/index.js";
 import dotenv from "dotenv";
 
 dotenv.config({
-  path: "./env",
+  path: "./.env",
 });
 connectDb()
   .then(() => {
@@ -15,6 +15,7 @@ connectDb()
     console.log("Mongo DB connect ");
   });
 // (async () => {
+
 //   try {
 //     await mongoose.connect(`${process.env.MONGO_URL}/${DB_NAME}`);
 //   } catch (e) {
