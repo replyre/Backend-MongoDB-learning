@@ -157,7 +157,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
     const decodedToken = jwt.verify(
       IncomigToken.process.env.REFRESH_TOKEN_SECRET
     );
-    const user = User.findById(decodedToken?._id);
+    const user = await User.findById(decodedToken?._id);
     if (!user) {
       throw new ApiError(401, "Invalid Refresh Token");
     }
@@ -213,7 +213,7 @@ const changeCurrentPassword = asyncHandler(async (req, res) => {
 const getCureentUser = asyncHandler(async (req, res) => {
   return res
     .status(200)
-    .json(200, req.user, "current user fetched successfully");
+    .json(new ApiResponse(200, req.user, "current user fetched successfully"));
 });
 
 const updateAccountDetails = asyncHandler(async (req, res) => {
@@ -223,7 +223,7 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
     throw new ApiError(400, "All fields are required");
   }
 
-  const user = User.findByIdAndUpdate(
+  const user = await User.findByIdAndUpdate(
     req.user?._id,
     {
       $set: {
@@ -252,7 +252,7 @@ const updateAvatar = asyncHandler(async (req, res) => {
   }
 
   const user = await User.findByIdAndUpdate(
-    req.User?._id,
+    req.user?._id,
     {
       $set: {
         avatar: avatar.url,
